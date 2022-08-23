@@ -22,5 +22,25 @@ def grammer_check(str)
   else
     return false
   end
+  # str.chr == str.chr.upcase && (str[-1] == ".") || (str[-1] == "!") || (str[-1] == "?") ? true : false
+end
+
+def contains_todo(str)
+  if str.include? "#TODO"
+    return true
+  else
+    return false
+end
+
+=begin  
+  arr_of_words = str.split(" ")
+  arr_of_words.each { |word|
+    if word == "#TODO"
+      return true
+    else
+      return false
+    end
+  }
+=end 
 
 end

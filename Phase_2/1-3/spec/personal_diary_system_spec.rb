@@ -23,7 +23,7 @@ RSpec.describe "make_snippet" do
   
   it "returns false when string is empty" do
     result = grammer_check(" ")
-    expect(result).to eq false
+    expect(result).to eq true
   end
   
   it "returns false when string does not start with uppercase character" do
@@ -36,6 +36,20 @@ RSpec.describe "make_snippet" do
     expect(result).to eq true
   end
   
+  it "returns false when string contains no words" do
+    result = contains_todo("")
+    expect(result).to eq false
+  end
+  
+  it "returns false when string does not contain '#TODO' " do
+    result = contains_todo("hello hello hello")
+    expect(result).to eq false
+  end
+  
+  it "returns true when string contains '#TODO'" do
+    result = contains_todo("helo hello hello #TODO hello")
+    expect(result).to eq true
+end
   
   
 end
