@@ -34,3 +34,6 @@ class Diary
   end
 
 end
+
+diary = Diary.new
+entry_1 = DiaryEntry.new("Monday", "Today is Monday")
